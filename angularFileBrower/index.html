@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN" ng-app="fb" ng-controller="fbController as vm">
+    <head>
+        <meta charset="utf-8">
+        <meta name="renderer" content="webkit">
+        <title ng-cloak>资源管理器</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <link rel="shortcut icon" href="images/chrome.png" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+        <!--<link href="../bower_components/angular-material/angular-material.min.css" rel="stylesheet" type="text/css">-->
+        <!--<link href="../bower_components/material-design-icons/iconfont/material-icons.css" rel="stylesheet" type="text/css">-->
+        <!--<link href="../angular-schema-form-nwp-file-upload/dist/schema-form-file.min.css" rel="stylesheet" type="text/css"/>-->
+
+        <link href="libs/vendor.min.css" rel="stylesheet" type="text/css">
+
+        <link href="dist/file-browser.css" rel="stylesheet" type="text/css">
+        <!--<script src="../bower_components/jquery/dist/jquery.min.js"></script>-->
+        <!--<script src="../bower_components/angular/angular.min.js"></script>-->
+        <!--<script src="../bower_components/underscore/underscore-min.js"></script>-->
+        <!--<script src="../bower_components/restangular/dist/restangular.min.js"></script>-->
+        <!--<script src="../bower_components/angular-translate/angular-translate.min.js"></script>-->
+        <!--<script src="../bower_components/angular-animate/angular-animate.min.js"></script>-->
+        <!--<script src="../bower_components/angular-aria/angular-aria.min.js"></script>-->
+        <!--<script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>-->
+        <!--<script src="../bower_components/angular-messages/angular-messages.min.js"></script>-->
+        <!--<script src="../bower_components/angular-material/angular-material.min.js"></script>-->
+        <!--<script src="../bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>-->
+        <!--<script src="../bower_components/angular-sanitize/angular-sanitize.min.js"></script>-->
+        <!--<script src="../bower_components/moment/min/moment.min.js"></script>-->
+        <!--<script src="../bower_components/tv4/tv4.js"></script>-->
+        <!--<script src="../bower_components/objectpath/lib/ObjectPath.js"></script>-->
+        <!--<script src="../bower_components/angular-schema-form/dist/schema-form.js"></script>-->
+        <!--<script src="../bower_components/ng-file-upload/ng-file-upload-all.min.js"></script>-->
+        <!--<script src="../angular-schema-form-material/material-decorator.js"></script>-->
+        <!--<script src="../angular-schema-form-nwp-file-upload/dist/schema-form-file.min.js"></script>-->
+        <script src="libs/vendor.min.js"></script>
+        <!--<script src="assets/jquery.areaselect.js"></script>-->
+        <script src="dist/file-browser.js"></script>
+    </head>
+
+    <body layout="column" ng-right-click>
+        <div class="app-data" flex layout="column" ui-view></div>
+    </body>
+</html>

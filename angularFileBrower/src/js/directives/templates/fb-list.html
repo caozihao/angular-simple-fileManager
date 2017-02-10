@@ -1,0 +1,75 @@
+<div class="fb-list" layout="column" flex>
+    <div layout="row" layout-align="space-between center" class="fb-list-toolbar" md-whiteframe="1">
+        <div class="fb-list-nav" flex layout="row" layout-align="start center" ng-show="!inEditPath">
+            <div layout="row" layout-align="start center" flex="nogrow">
+                <md-button ng-click="loadPath()">根目录</md-button>
+                <div layout="row" layout-align="start center" ng-repeat="item in fbPathNodes" class="fb-list-nav-item">
+                    <md-icon>keyboard_arrow_right</md-icon>
+                    <md-button ng-click="loadPath(item)" ng-if="!$last">{{item.fbInfo.pathName}}</md-button>
+                    <span ng-if="$last">{{item.fbInfo.pathName}}</span>
+                </div>
+            </div>
+            <md-button class="md-icon-button" ng-click="editPath()"><md-icon>edit</md-icon></md-button>
+        </div>
+        <div class="fb-list-nav" flex layout="row" layout-align="start center" ng-show="inEditPath">
+            <md-input-container md-no-float class="md-block" flex>
+                <md-icon>edit</md-icon>
+                <input id="path-editor" type="text" ng-model="nowPath" placeholder="请输入要打开的目录" ng-keyup="goPath($event)" ng-blur="leaveEditPath()" onfocus="this.select()">
+            </md-input-container>
+        </div>
+        <div flex="none" layout="row" layout-align="end center" class="fb-list-search" ng-show="fbSearchNodeFilter">
+            <md-input-container md-no-float>
+                <md-icon>search</md-icon>
+                <input ng-model="searchText" type="text" placeholder="本地搜索" ng-keyup="searchNode($event)">
+            </md-input-container>
+        </div>
+    </div>
+    <div flex layout="column" ng-if="fbView == 'list'">
+        <div id="fb-list-item-title">
+            <div class="fb-list-item-title" layout="row" layout-align="start center" ng-right-click="rightClickTitle($event)"
+                as-sortable="dragControlListeners" ng-model="fbNodeConfig">
+                <div ng-click="sort(item.name)" md-ink-ripple layout="row" ng-repeat="item in fbNodeConfig" ng-if="item.show && !fbResizeable"
+                     ng-class="{'layout-align-end-center':isLastTitle(item)}" as-sortable-item flex="{{item.flex}}">
+                    <div as-sortable-item-handle></div>
+                    <span flex="nogrow">{{item.showName}}</span>
+                    <md-icon ng-if="sortItem == item.name">{{sortBy == 'asc' ? 'arrow_upward':'arrow_downward'}}</md-icon>
+                </div>
+                <div ng-click="sort(item.name)" md-ink-ripple layout="row" ng-repeat="item in fbNodeConfig" ng-if="item.show && fbResizeable"
+                     as-sortable-item resizable r-directions="['right']" r-width="item.width || 100">
+                    <div as-sortable-item-handle></div>
+                    <span flex="nogrow">{{item.showName}}</span>
+                    <md-icon ng-if="sortItem == item.name">{{sortBy == 'asc' ? 'arrow_upward':'arrow_downward'}}</md-icon>
+                </div>
+            </div>
+        </div>
+        <md-virtual-repeat-container fb-area-select ng-model="allNode" class="fb-list-list-container" md-top-index="topIndex" flex ng-right-click="rightClickItem(null,$event)" ng-click="clickEmpty($event)">
+            <div md-virtual-repeat="item in allNode" md-item-size="20">
+                <div class="fb-list-item" ng-right-click="rightClickItem(item,$event,$index)"
+                     ng-class="{'fb-list-item-select':isSelectedNode(item),'fb-list-item-last-select':$index == fbLastSelectNodesIndex}"
+                     ng-click="click(item,$event,$index)" ng-dblclick="getChildren(item)" md-ink-ripple>
+                    <div layout="row" layout-align="start center" class="fb-list-item-inner">
+                        <div style="text-align: left;" ng-style="{'width':it.width || 100}" ng-repeat="it in fbNodeConfig" ng-if="it.show && fbResizeable">
+                            <md-icon ng-class="{'icon-rotate':item.isLoading}" ng-if="isFirstField(it)">{{getItemStatus(item)}}</md-icon>
+                            {{it.getData(item)}}
+                        </div>
+                        <div flex="{{it.flex}}" ng-repeat="it in fbNodeConfig" ng-if="it.show && !fbResizeable">
+                            <md-icon ng-class="{'icon-rotate':item.isLoading}" ng-if="isFirstField(it)">{{getItemStatus(item)}}</md-icon>
+                            {{it.getData(item)}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </md-virtual-repeat-container>
+    </div>
+    <div flex layout="column" ng-if="fbView == 'grid'">
+        <md-virtual-repeat-container class="fb-list-grid-container"  md-top-index="topIndex" flex ng-right-click="rightClickItem(null,$event)" ng-click="clickEmpty($event)">
+            <div md-virtual-repeat="item0 in allGridNode" md-item-size="20" layout="row" layout-align="start start">
+                <div ng-repeat="item in item0" class="fb-list-item" ng-right-click="rightClickItem(item,$event,$index)"
+                     ng-class="{'fb-list-item-select':isSelectedNode(item),'fb-list-item-select-multi':fbSelectNodes.length > 1,'fb-list-item-last-select':isLastClickNode(item)}" layout="column"
+                     ng-include="fbListItemGridTemplateUrl"
+                     ng-click="click(item,$event)" ng-dblclick="getChildren(item)" md-ink-ripple>
+                </div>
+            </div>
+        </md-virtual-repeat-container>
+    </div>
+</div>

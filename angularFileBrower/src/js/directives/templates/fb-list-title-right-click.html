@@ -1,0 +1,11 @@
+<div class="fb-right-click" role="listbox">
+    <div class="menu-item"
+         ng-click="item.show = !item.show"
+         layout="row" layout-align="start center"
+         md-ink-ripple
+         ng-repeat="item in vm.items">
+        <md-checkbox ng-checked="item.show" class="md-primary">
+            {{ item.showName }}
+        </md-checkbox>
+    </div>
+</div>

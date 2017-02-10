@@ -1,0 +1,37 @@
+<md-content flex layout="column">
+    <div layout="row" layout-align="space-between center">
+        <div layout-padding>
+            项目属性
+        </div>
+        <md-button class="md-icon-button" ng-click="vm.closeSidenav()">
+            <md-icon>close</md-icon>
+        </md-button>
+    </div>
+    <md-divider></md-divider>
+    <div layout="column" flex>
+        <div ng-if="vm.selectNodes.length > 1">
+            已选中{{vm.selectNodes.length}}个项目
+        </div>
+        <div ng-if="vm.selectNodes.length == 1 && !vm.selectNodes[0].xAttrEdit">
+            <md-button ng-click="vm.selectNodes[0].xAttrEdit = true">编辑</md-button>
+            {{vm.selectNodes[0].model.xAttrs}}
+        </div>
+        <div ng-if="vm.selectNodes.length == 1 && vm.selectNodes[0].xAttrEdit" layout="column" flex>
+            <div layout="row" layout-padding flex="none">
+                <span>文件类型：</span>
+                <div ng-repeat="item in vm.schemas">
+                    <md-checkbox ng-checked="vm.schemaExists(item)" ng-click="vm.schemaToggle(item)" class="md-primary" ng-if="item.type != 0">
+                        {{ item.showName }}
+                    </md-checkbox>
+                </div>
+            </div>
+            <div flex layout-padding class="overflow-auto">
+                <fb-attr fb-model="vm.selectNodes[0].xAttr" ng-model="vm.selectNodes[0].config"></fb-attr>
+            </div>
+            <md-divider></md-divider>
+            <div flex="none" layout="row" layout-align="end center">
+                <md-button class="md-primary" ng-click="vm.onSubmit()">保存</md-button>
+            </div>
+        </div>
+    </div>
+</md-content>

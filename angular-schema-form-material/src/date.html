@@ -1,0 +1,16 @@
+<div class="schema-form-date {{::form.htmlClass}}">
+  <md-input-container sf-messages  style="margin-bottom: 13px;">
+    <label ng-show="showTitle()" for="{{::form.key|sfCamelKey}}">{{::form.title}}</label>
+    <md-datepicker sf-field-model
+                   md-open-on-focus
+                   md-hide-icons="calendar"
+                   sf-changed="form"
+                   schema-validate="form"
+                   sf-type-parser="form.schema"
+                   id="{{::form.key|sfCamelKey}}"
+                   ng-show="::form.key"
+                   ng-class="::form.fieldHtmlClass"
+                   ng-disabled="::form.readonly">
+    </md-datepicker>
+  </md-input-container>
+</div>

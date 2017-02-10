@@ -1,0 +1,15 @@
+﻿<div layout="column" flex class="overflow-auto fb-main" ng-controller="MainController as vm">
+    <div layout="row" flex="none" class="top-bar" ng-include="'src/js/main/templates/main-topbar.html'" md-whiteframe="4" layout-align="center stretch"></div>
+    <div layout="row" flex style="position: relative;">
+        <md-sidenav ng-include="'src/js/main/templates/main-sidenav.html'" layout="column" class="md-sidenav-left md-whiteframe-4dp" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')"></md-sidenav>
+        <md-content layout="column" id="content" flex>
+            <fb-list ng-model="vm.initNodes" fb-click="vm.execNode" fb-select-node="vm.selectNode" fb-path-nodes="vm.pathNodes" fb-select-nodes="vm.selectNodes" fb-view="vm.viewType"
+                     fb-path-name="vm.pathName" fb-item-icon="vm.getItemIcon" fb-sort-compare="vm.sortCompare" fb-search-node-filter="vm.searchNodeFilter" fb-node-config="vm.nodeConfig"
+                     fb-list-item-grid-template-url="'src/js/file/templates/file-list-grid.html'"
+                     fb-right-click="vm.rightClickList"
+                     fb-resizeable="vm.resizeable">
+            </fb-list>
+        </md-content>
+        <md-sidenav ng-include="'src/js/file/templates/file-list-right.html'" layout="column" class="md-sidenav-right md-whiteframe-4dp" ng-class="{'md-sidenav-expend':vm.selectNodes[0].xAttrEdit}" md-component-id="right" md-disable-backdrop></md-sidenav>
+    </div>
+</div>

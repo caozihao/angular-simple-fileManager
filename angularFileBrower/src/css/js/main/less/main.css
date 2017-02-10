@@ -1,0 +1,29 @@
+html {
+  overflow-x: hidden;
+}
+.fb-main .top-bar {
+  z-index: 2;
+}
+.fb-main .nav-logo {
+  height: 64px;
+}
+.fb-main .main-content {
+  position: relative;
+}
+.fb-main md-content#content {
+  background: #fafafa;
+  overflow: hidden;
+}
+.fb-main md-sidenav {
+  background: white;
+}
+.fb-main .md-sidenav-right {
+  -webkit-transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
+  -moz-transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
+  -o-transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
+}
+.fb-main .md-sidenav-right.md-sidenav-expend {
+  max-width: calc(100% - 32px);
+  width: 1000px;
+}

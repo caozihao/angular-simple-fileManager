@@ -1,0 +1,48 @@
+@import url(../../../less/color.less);
+
+.fb-right-click {
+  background: white;
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12);
+  width: 320px;
+  padding: 8px 0;
+  .menu-item{
+    line-height: 48px;
+    height: 48px;
+    padding: 0 16px;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+    md-icon{
+      margin:0 16px 0 0;
+    }
+    &:hover{
+      background: @color-divider;
+      color: @color-primary;
+      md-icon{
+        color: @color-primary;
+      }
+    }
+  }
+  md-divider{
+    margin: 8px 0;
+  }
+}
+.right-click-panel{
+  transform: translate(-50%,-50%) scale(0);
+  &.right-click-animation-open {
+    opacity: 1;
+    -webkit-transition:all .3s cubic-bezier(.25, .8, .25, 1) 0s;
+    -moz-transition:all .3s cubic-bezier(.25, .8, .25, 1) 0s;
+    -o-transition: all .3s cubic-bezier(.25, .8, .25, 1) 0s;
+    transition:all .3s cubic-bezier(.25, .8, .25, 1) 0s;
+    transform: translate(0,0) scale(1);
+  }
+  &.right-click-animation-close {
+    opacity: 0;
+    -webkit-transition:all .3s cubic-bezier(.25, .8, .25, 1) 0s;
+    -moz-transition:all .3s cubic-bezier(.25, .8, .25, 1) 0s;
+    -o-transition: all .3s cubic-bezier(.25, .8, .25, 1) 0s;
+    transition:all .3s cubic-bezier(.25, .8, .25, 1) 0s;
+    transform: translate(-50%,-50%) scale(0);
+  }
+}

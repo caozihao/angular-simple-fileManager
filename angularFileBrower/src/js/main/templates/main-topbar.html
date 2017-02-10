@@ -1,0 +1,48 @@
+<md-toolbar flex>
+    <div class="md-toolbar-tools" layout="row">
+        <div layout="row" layout-align="start center" flex="none" class="nav-logo">
+            <a ui-sref="main"><img src="images/logo.png" height="48"></a>
+        </div>
+        <md-button class="md-icon-button" ng-click="vm.toggleSidenav('left')" hide-gt-sm aria-label="Toggle Menu">
+            <md-tooltip>{{'change_sidenav' | translate}}</md-tooltip>
+            <md-icon>menu</md-icon>
+        </md-button>
+        <span flex></span>
+
+        <md-switch class="md-primary" ng-model="vm.resizeable" aria-label="List Resizeable">
+            <md-tooltip>{{'list_resizeable' | translate}}</md-tooltip>
+        </md-switch>
+
+        <md-switch class="md-primary" ng-model="vm.isTrueData" aria-label="NOT DEBUG" ng-change="vm.changeDataType()">
+            <md-tooltip>{{'not_debug_mode' | translate}}</md-tooltip>
+        </md-switch>
+
+        <md-button class="md-icon-button" ng-click="vm.setViewType('list')" aria-label="List" ng-if="vm.viewType == 'grid'">
+            <md-tooltip>{{'list_view' | translate}}</md-tooltip>
+            <md-icon>view_list</md-icon>
+        </md-button>
+        <md-button class="md-icon-button" ng-click="vm.setViewType('grid')" aria-label="Grid" ng-if="vm.viewType == 'list'">
+            <md-tooltip>{{'grid_view' | translate}}</md-tooltip>
+            <md-icon>apps</md-icon>
+        </md-button>
+
+        <md-menu md-position-mode="target-right target" >
+            <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)" aria-label="Change Language">
+                <md-tooltip>{{'change_language' | translate}}</md-tooltip>
+                <md-icon>language</md-icon>
+            </md-button>
+            <md-menu-content width="4" >
+                <md-menu-item>
+                    <md-button ng-click="vm.changeLanguage('zh_cn')">
+                            切换为中文
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button ng-click="vm.changeLanguage('en')">
+                            Change To English
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+    </div>
+</md-toolbar>

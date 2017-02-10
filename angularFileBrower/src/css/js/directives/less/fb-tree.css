@@ -1,0 +1,50 @@
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+  }
+}
+.fb-tree .fb-tree-item {
+  outline: 0;
+  padding: 0;
+}
+.fb-tree .fb-tree-item md-icon.icon-rotate {
+  animation: rotate 1s linear infinite;
+  -moz-animation: rotate 1s linear infinite;
+  -webkit-animation: rotate 1s linear infinite;
+  -o-animation: rotate 1s linear infinite;
+}
+.fb-tree .fb-tree-item .md-button {
+  margin: 0;
+  text-align: left;
+}
+.fb-tree .fb-tree-item .md-button:hover {
+  color: #009688;
+}
+.fb-tree .fb-tree-item .md-button:hover md-icon {
+  color: #009688;
+}
+.fb-tree .fb-tree-item .md-fat {
+  overflow: visible;
+  background: transparent!important;
+  padding-left: 0;
+}
+.fb-tree .fb-tree-item .md-fat .md-ripple-container {
+  display: none;
+}
+.fb-tree .fb-tree-item.fb-tree-item-select {
+  background-color: rgba(158, 158, 158, 0.2);
+}
+.fb-tree .md-virtual-repeat-scroller {
+  overflow-x: auto;
+}

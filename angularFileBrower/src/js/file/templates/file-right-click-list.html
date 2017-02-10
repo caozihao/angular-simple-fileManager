@@ -1,0 +1,194 @@
+<div class="fb-right-click" role="listbox">
+    <div class="menu-item"
+         ng-class="{selected : 'open' == vm.selectItem}"
+         tabindex="-1"
+         role="option"
+         ng-click="vm.open()"
+         ng-keydown="vm.onKeydown($event, 'open')"
+         layout="row" layout-align="start center"
+         md-ink-ripple
+         ng-if="vm.items.length == 1">
+        <md-icon>drafts</md-icon>
+        打开
+    </div>
+    <div class="menu-item"
+         ng-class="{selected : 'delete' == vm.selectItem}"
+         tabindex="-1"
+         role="option"
+         ng-click="vm.delete($event)"
+         ng-keydown="vm.onKeydown($event, 'delete')"
+         layout="row" layout-align="start center"
+         md-ink-ripple
+         ng-if="vm.items.length">
+        <md-icon>delete</md-icon>
+        删除
+    </div>
+    <div class="menu-item"
+         ng-class="{selected : 'rename' == vm.selectItem}"
+         tabindex="-1"
+         role="option"
+         ng-click="vm.rename()"
+         ng-keydown="vm.onKeydown($event, 'rename')"
+         layout="row" layout-align="start center"
+         md-ink-ripple
+         ng-if="vm.items.length">
+        <md-icon>border_color</md-icon>
+        重命名
+    </div>
+    <div class="menu-item"
+         ng-class="{selected : 'download' == vm.selectItem}"
+         tabindex="-1"
+         role="option"
+         ng-click="vm.download()"
+         ng-keydown="vm.onKeydown($event, 'download')"
+         layout="row" layout-align="start center"
+         md-ink-ripple
+         ng-if="vm.items.length">
+        <md-icon>cloud_download</md-icon>
+        下载文件
+    </div>
+    <div class="menu-item"
+         ng-class="{selected : 'cut' == vm.selectItem}"
+         tabindex="-1"
+         role="option"
+         ng-click="vm.cut()"
+         ng-keydown="vm.onKeydown($event, 'cut')"
+         layout="row" layout-align="start center"
+         md-ink-ripple
+         ng-if="vm.items.length">
+        <md-icon>content_cut</md-icon>
+        剪切
+    </div>
+    <div class="menu-item"
+         ng-class="{selected : 'copy' == vm.selectItem}"
+         tabindex="-1"
+         role="option"
+         ng-click="vm.copy()"
+         ng-keydown="vm.onKeydown($event, 'copy')"
+         layout="row" layout-align="start center"
+         md-ink-ripple
+         ng-if="vm.items.length">
+        <md-icon>add_to_photos</md-icon>
+        复制
+    </div>
+    <div class="menu-item"
+         ng-class="{selected : 'paste' == vm.selectItem}"
+         tabindex="-1"
+         role="option"
+         ng-click="vm.paste()"
+         ng-keydown="vm.onKeydown($event, 'paste')"
+         layout="row" layout-align="start center"
+         md-ink-ripple
+         ng-if="vm.copyItems">
+        <md-icon>layers</md-icon>
+        粘贴
+    </div>
+    <div class="menu-item"
+         ng-class="{selected : 'compress' == vm.selectItem}"
+         tabindex="-1"
+         role="option"
+         ng-click="vm.compress()"
+         ng-keydown="vm.onKeydown($event, 'compress')"
+         layout="row" layout-align="start center"
+         md-ink-ripple
+         ng-if="vm.items.length">
+        <md-icon>archive</md-icon>
+        压缩
+    </div>
+    <div class="menu-item"
+         ng-class="{selected : 'uncompress' == vm.selectItem}"
+         tabindex="-1"
+         role="option"
+         ng-click="vm.uncompress()"
+         ng-keydown="vm.onKeydown($event, 'uncompress')"
+         layout="row" layout-align="start center"
+         md-ink-ripple
+         ng-if="vm.items.length">
+        <md-icon>unarchive</md-icon>
+        解压
+    </div>
+    <div class="menu-item"
+         ng-class="{selected : 'show' == vm.selectItem}"
+         tabindex="-1"
+         role="option"
+         ng-click="vm.show()"
+         ng-keydown="vm.onKeydown($event, 'show')"
+         layout="row" layout-align="start center"
+         md-ink-ripple
+         ng-if="vm.items.length">
+        <md-icon>flip_to_front</md-icon>
+        显示文件
+    </div>
+    <div class="menu-item"
+         ng-class="{selected : 'hide' == vm.selectItem}"
+         tabindex="-1"
+         role="option"
+         ng-click="vm.hide()"
+         ng-keydown="vm.onKeydown($event, 'hide')"
+         layout="row" layout-align="start center"
+         md-ink-ripple
+         ng-if="vm.items.length">
+        <md-icon>flip_to_back</md-icon>
+        隐藏文件
+    </div>
+    <div class="menu-item"
+         ng-class="{selected : 'share' == vm.selectItem}"
+         tabindex="-1"
+         role="option"
+         ng-click="vm.share()"
+         ng-keydown="vm.onKeydown($event, 'share')"
+         layout="row" layout-align="start center"
+         md-ink-ripple
+         ng-if="vm.items.length == 1">
+        <md-icon>share</md-icon>
+        共享
+    </div>
+    <md-divider ng-if="vm.items.length"></md-divider>
+    <div class="menu-item"
+         ng-class="{selected : 'create' == vm.selectItem}"
+         tabindex="-1"
+         role="option"
+         ng-click="vm.create($event)"
+         ng-keydown="vm.onKeydown($event, 'create')"
+         layout="row" layout-align="start center"
+         md-ink-ripple
+         ng-if="!vm.items.length">
+        <md-icon>create_new_folder</md-icon>
+        新建文件夹
+    </div>
+    <div class="menu-item"
+         ng-class="{selected : 'create' == vm.selectItem}"
+         tabindex="-1"
+         role="option"
+         ng-click="vm.createFile($event)"
+         ng-keydown="vm.onKeydown($event, 'create')"
+         layout="row" layout-align="start center"
+         md-ink-ripple
+         ng-if="!vm.items.length">
+        <md-icon>description</md-icon>
+        新建文件
+    </div>
+    <div class="menu-item"
+         ng-class="{selected : 'upload' == vm.selectItem}"
+         tabindex="-1"
+         role="option"
+         ng-click="vm.upload()"
+         ng-keydown="vm.onKeydown($event, 'upload')"
+         layout="row" layout-align="start center"
+         md-ink-ripple
+         ng-if="!vm.items.length">
+        <md-icon>cloud_upload</md-icon>
+        上传文件
+    </div>
+    <div class="menu-item"
+         ng-class="{selected : 'attr' == vm.selectItem}"
+         tabindex="-1"
+         role="option"
+         ng-click="vm.attr()"
+         ng-keydown="vm.onKeydown($event, 'attr')"
+         layout="row" layout-align="start center"
+         md-ink-ripple>
+        <md-icon>featured_play_list</md-icon>
+        属性
+    </div>
+</div>

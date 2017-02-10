@@ -1,0 +1,9 @@
+<section class="schema-form-submit {{form.htmlClass}}" sf-messages>
+  <md-button class="{{ form.style || 'md-primary' }} {{form.fieldHtmlClass}}"
+             type="{{::form.type}}"
+             ng-disabled="form.readonly"
+             aria-label="{{::form.title}}" style="margin: 6px 0;">
+    <md-tooltip ng-if="::form.tip">{{::form.tip}}</md-tooltip>
+    {{::form.title}}
+  </md-button>
+</section>

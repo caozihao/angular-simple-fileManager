@@ -1,0 +1,43 @@
+.schema-form-file.file-upload {
+  margin-bottom: 15px;
+}
+.schema-form-file.file-upload .dragAndDropDescription {
+  margin-top: 8px;
+  border: 3px dashed #e1e2e3;
+  vertical-align: middle;
+  padding: 0 20px;
+}
+.schema-form-file.file-upload .dragAndDropDescription button {
+  margin: 40px auto;
+}
+.schema-form-file.file-upload label {
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+.schema-form-file.file-upload .filename {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.schema-form-file.file-upload .errorMsg {
+  display: block;
+  margin-bottom: 5px;
+}
+.schema-form-file.file-upload > .row {
+  margin-bottom: 10px;
+}
+.schema-form-file.file-upload > .list-group > .list-group-item {
+  margin: 0;
+}
+.schema-form-file.file-upload > .list-group > .list-group-item .mb-sm {
+  margin: 0;
+}
+.schema-form-file.file-upload #fileInputButton {
+  margin-top: 15px;
+}
+.schema-form-file.file-upload .has-error.border-danger {
+  border-color: #f05050;
+}

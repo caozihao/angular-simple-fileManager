@@ -1,0 +1,49 @@
+{
+  "name": "angular-schema-form-material",
+  "version": "1.0.0-alpha.1",
+  "authors": [
+    "Marcel Bennett <iamanthropic@gmail.com>"
+  ],
+  "description": "Angular Material decorator for Angular Schema Form",
+  "main": "material-decorator.js",
+  "keywords": [
+    "angular-schema-form-decorator",
+    "angular material",
+    "material design",
+    "json-schema-form"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/json-schema-form/angular-schema-form-material",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-schema-form": ">=0.8.13",
+    "angular": "1.5.5",
+    "angular-material": "1.0.7",
+    "angular-animate": "1.4",
+    "angular-sanitize": "1.4"
+  },
+  "devDependencies": {
+    "angular-ui-ace": "~0.2.3",
+    "moment": "~2.10.6"
+  },
+  "resolutions": {
+    "angular-material": "^1.0.7",
+    "angular": "^1.5.5"
+  },
+  "_release": "1.0.0-alpha.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.0-alpha.1",
+    "commit": "459652f17c5def072e6726fb578fb2b3aa8ded16"
+  },
+  "_source": "https://github.com/json-schema-form/angular-schema-form-material.git",
+  "_target": "^1.0.0-alpha.1",
+  "_originalSource": "angular-schema-form-material",
+  "_direct": true
+}

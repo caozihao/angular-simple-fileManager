@@ -1,0 +1,18 @@
+<md-dialog aria-label="Image Preview" class="fb-file">
+    <form ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>图片预览</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="vm.cancel()">
+                    <md-icon aria-label="Close dialog">close</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <img ng-src="{{vm.domain + vm.item.fbInfo.path + '?op=open'}}"/>
+            </div>
+        </md-dialog-content>
+    </form>
+</md-dialog>

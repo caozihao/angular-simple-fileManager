@@ -1,0 +1,19 @@
+<div class="form-group schema-form-radios-inline {{form.htmlClass}}"
+     ng-class="{'has-error': hasError(), 'has-success': hasSuccess()}" sf-layout sf-messages>
+  <fieldset class="standard" style="margin-left:0; margin-right:0; margin-bottom: 33px; padding-bottom: 0;border: 1px dashed rgba(0,0,0,.12);">
+    <legend class="control-label" ng-show="showTitle()">{{form.title}}</legend>
+    <md-radio-group layout="row"
+                    sf-field-model="replaceAll"
+                    ng-model="$$value$$"
+                    class="layout-wrap {{form.fieldHtmlClass}}"
+                    ng-class="{ active: item.value === $$value$$ }"
+                    sf-changed="form"
+                    schema-validate="form"
+                    ng-disabled="form.readonly"
+                    name="{{form.key.join('.')}}">
+      <md-radio-button ng-repeat="item in form.titleMap" ng-value="item.value" class="md-primary" flex="none" style="margin-bottom: 16px;" aria-label="{{item.name}}">
+        <span ng-bind-html="item.name"></span>
+      </md-radio-button>
+    </md-radio-group>
+  </fieldset>
+</div>

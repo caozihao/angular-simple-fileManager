@@ -1,0 +1,14 @@
+<div flex layout="column" class="fb-tree">
+    <md-virtual-repeat-container  md-top-index="topIndex" flex>
+        <div class="fb-tree-item" ng-class="{'fb-tree-item-select':item.fbInfo.path == fbSelectNode.path}" md-virtual-repeat="item in allShowNode"
+             md-item-size="20" layout="row" ng-click="listNode(item)" ng-dblclick="toggleNode(item,$event)" ng-right-click="rightClickItem(item,$event)">
+            <md-button class="md-icon-button" ng-click="toggleNode(item,$event)" ng-style="{'margin-left': (item.fbInfo.level * 24 ) + 'px'}">
+                <md-icon>{{item.fbInfo.isOpen ? 'keyboard_arrow_down':'keyboard_arrow_right'}}</md-icon>
+            </md-button>
+            <md-button class="md-fat">
+                <md-icon ng-class="{'icon-rotate':item.isLoading}">{{getItemStatus(item)}}</md-icon>
+                <span ng-include="fbTreeItemTemplateUrl"></span>
+            </md-button>
+        </div>
+    </md-virtual-repeat-container>
+</div>

@@ -1,0 +1,46 @@
+.fb-right-click {
+  background: white;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+  width: 320px;
+  padding: 8px 0;
+}
+.fb-right-click .menu-item {
+  line-height: 48px;
+  height: 48px;
+  padding: 0 16px;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+}
+.fb-right-click .menu-item md-icon {
+  margin: 0 16px 0 0;
+}
+.fb-right-click .menu-item:hover {
+  background: rgba(0, 0, 0, 0.12);
+  color: #009688;
+}
+.fb-right-click .menu-item:hover md-icon {
+  color: #009688;
+}
+.fb-right-click md-divider {
+  margin: 8px 0;
+}
+.right-click-panel {
+  transform: translate(-50%, -50%) scale(0);
+}
+.right-click-panel.right-click-animation-open {
+  opacity: 1;
+  -webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
+  -moz-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
+  -o-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
+  transform: translate(0, 0) scale(1);
+}
+.right-click-panel.right-click-animation-close {
+  opacity: 0;
+  -webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
+  -moz-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
+  -o-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
+  transform: translate(-50%, -50%) scale(0);
+}

@@ -1,0 +1,44 @@
+@import url(../../../less/color.less);
+
+html {
+  overflow-x: hidden;
+}
+
+.fb-main {
+
+  .top-bar{
+    z-index: 2;
+  }
+
+  .nav-logo {
+    height: 64px;
+  }
+
+  .main-content{
+    position: relative;
+  }
+
+  md-content#content {
+    background: @color-content;
+    overflow: hidden;
+  }
+
+  md-sidenav {
+    background: white;
+    &.md-sidenav-left {
+      //max-width: 300px;
+      //min-width: 300px;
+   }
+  }
+
+  .md-sidenav-right {
+    -webkit-transition:all .5s cubic-bezier(.25, .8, .25, 1) 0s;
+    -moz-transition:all .5s cubic-bezier(.25, .8, .25, 1) 0s;
+    -o-transition: all .5s cubic-bezier(.25, .8, .25, 1) 0s;
+    transition:all .5s cubic-bezier(.25, .8, .25, 1) 0s;
+    &.md-sidenav-expend{
+      max-width: calc(~"100% - 32px");
+      width: 1000px;
+    }
+  }
+}

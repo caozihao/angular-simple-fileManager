@@ -1,0 +1,37 @@
+<md-dialog aria-label="Text File Preview" flex="80" flex-gt-lg="50" class="fb-file">
+    <form ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>{{vm.item.model.pathSuffix}}</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="vm.cancel()">
+                    <md-icon aria-label="Close dialog">close</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <div ng-if="!vm.inEdit" class="fb-file-content">
+                    {{vm.item.model.content}}
+                </div>
+                <div ng-if="vm.inEdit">
+                    <md-input-container md-no-float class="md-block">
+                        <textarea ng-model="vm.item.tempModel.content" rows="15" md-select-on-focus placeholder="请输入"></textarea>
+                    </md-input-container>
+                </div>
+            </div>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button class="md-primary" ng-click="vm.edit(true)" ng-show="!vm.inEdit">
+                编辑
+            </md-button>
+            <md-button ng-click="vm.edit(false)" ng-show="vm.inEdit">
+                取消
+            </md-button>
+            <md-button class="md-primary" ng-click="vm.save()" ng-show="vm.inEdit">
+                保存
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

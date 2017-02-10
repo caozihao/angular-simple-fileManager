@@ -1,0 +1,64 @@
+@color-deep: rgba(0, 0, 0, .87);
+@color-normal: rgba(0, 0, 0, .54);
+@color-light: rgba(0, 0, 0, .26);
+@color-white-font: rgba(255, 255, 255, .87);
+@color-white-font-normal: rgba(255, 255, 255, .54);
+@color-primary: #009688;
+@color-primary-50: #E0F2F1;
+@color-primary-100: #B2DFDB;
+@color-primary-200: #80cbc4;
+@color-primary-300: #4DB6AC;
+@color-primary-600: #00897b;
+@color-primary-800: #00695c;
+
+@color-dark: #424242;
+@color-top-tools-container: white;
+@color-bg-1:#ddd;
+@color-bg-2:#eee;
+@color-bg-3:#f5f5f5;
+@color-bg-4:#333;
+@color-bg-5:#727272;
+@color-bg-6:#f0f0f0;
+@color-bg-7:#ccc;
+@color-bg-8:#999;
+@color-bg-9:rgba(193,193,193,.23);
+@color-bg-10:#fafafa;
+@color-bg-11: rgba(0,0,0,.65);
+@color-bg-toast:#323232;
+@color-divider:rgba(0,0,0,.12);
+@color-divider-white:rgba(255,255,255,.12);
+@color-divider-deep:rgba(0,0,0,.26);
+@color-blue:#2196f3;
+@color-red:#f44336;
+@color-red-300:#E57373;
+@color-yellow:#ffeb3b;
+@color-yellow-600:#ffd835;
+@color-amber:#ffc107;
+@color-amber-300:#ffd54f;
+@color-amber-500:#ffc107;
+
+@color-border-white: rgba(255, 255, 255, .12);
+@color-content: #fafafa;
+@font-family: 'PingFang SC','Hiragino Sans GB', 'Microsoft Yahei', Roboto,Helvetica Neue,sans-serif;
+
+.he-avatar(@w,@h,@f,@b){
+  width:@w;
+  height: @h;
+  line-height: @h;
+  font-size:@f;
+  text-align: center;
+  border-radius: 50%;
+  color:@color-white-font;
+  border: @b solid @color-bg-2;
+  background: no-repeat center center;
+  background-size: contain;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+.line-hidden(){
+  word-break: keep-all;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

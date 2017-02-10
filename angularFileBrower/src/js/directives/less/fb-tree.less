@@ -1,0 +1,54 @@
+@import url(../../../less/color.less);
+
+.fb-tree {
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+    }
+  }
+  .fb-tree-item {
+    outline: 0;
+    padding: 0;
+    md-icon.icon-rotate {
+      animation: rotate 1s linear infinite;
+      -moz-animation: rotate 1s linear infinite;
+      -webkit-animation: rotate 1s linear infinite;
+      -o-animation: rotate 1s linear infinite;
+    }
+    .md-button {
+      margin: 0;
+      text-align: left;
+      &:hover{
+        color:@color-primary;
+        md-icon{
+          color:@color-primary;
+        }
+      }
+    }
+    .md-fat{
+      overflow: visible;
+      background: transparent!important;
+      padding-left: 0;
+      .md-ripple-container{
+        display: none;
+      }
+    }
+    &.fb-tree-item-select{
+      background-color: rgba(158,158,158,0.2);
+    }
+  }
+  .md-virtual-repeat-scroller{
+    overflow-x: auto;
+  }
+}

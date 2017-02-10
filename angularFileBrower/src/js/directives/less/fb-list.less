@@ -1,0 +1,205 @@
+@import url(../../../less/color.less);
+
+.fb-list {
+  -moz-user-select:none;
+  -webkit-user-select:none;
+  user-select:none;
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+    }
+  }
+  .fb-list-toolbar{
+    background: white;
+    padding: 8px 16px;
+  }
+  .fb-list-nav{
+    height: 40px;
+    margin-right: 8px;
+    &>div{
+      overflow: hidden;
+    }
+    .md-button{
+      color: @color-primary;
+      margin: 0;
+      &:hover{
+        md-icon{
+          color: @color-primary;
+        }
+      }
+    }
+    .fb-list-nav-item>span{
+      height: 40px;
+      line-height: 40px;
+      min-width: 64px;
+      text-align: center;
+      padding: 0 6px;
+      margin: 0;
+    }
+  }
+  .fb-list-search,.fb-list-nav{
+    md-input-container{
+      margin: 0;
+      input{
+        border-bottom: 0;
+      }
+      .md-errors-spacer{
+        display: none;
+      }
+    }
+  }
+  md-virtual-repeat-container{
+    outline: 0;
+  }
+  .fb-list-item{
+    outline: 0;
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+    cursor:pointer;
+    border:1px solid transparent;
+
+    md-icon.icon-rotate{
+      animation: rotate 1s linear infinite;
+      -moz-animation: rotate 1s linear infinite;
+      -webkit-animation: rotate 1s linear infinite;
+      -o-animation: rotate 1s linear infinite;
+    }
+    &:hover{
+      background:@color-divider;
+      color:@color-primary;
+      md-icon{
+        color:@color-primary;
+      }
+    }
+    &.fb-list-item-last-select{
+      border:1px solid @color-primary;
+    }
+    &.fb-list-item-select{
+      background:@color-primary;
+      color:@color-white-font;
+      md-icon{
+        color:@color-white-font;
+      }
+    }
+    .fb-list-item-inner>*{
+      .line-hidden();
+      padding-left: 8px;
+    }
+    .fb-list-item-inner>:first-child{
+      md-icon{
+        margin-right: 8px;
+      }
+      padding-left: 24px;
+    }
+    .fb-list-item-inner>:last-child{
+      text-align: right;
+      //padding-right: 17px;
+    }
+  }
+  .fb-list-item-title{
+    height: 40px;
+    line-height: 40px;
+    padding-right: 17px;
+    &>div{
+      outline: 0;
+      position: relative;
+      cursor: pointer;
+      display: flex;
+      &:hover{
+        background: @color-primary-100;
+      }
+      &>.rg-right{
+        margin-right: 0;
+        span{
+          border: 0;
+        }
+      }
+      &>.as-sortable-item-handle{
+        position: absolute;
+        left:0;
+        right: 0;
+        top:0;
+        bottom: 0;
+        z-index: 1;
+        cursor: pointer;
+      }
+      span{
+        padding-left: 8px;
+        .line-hidden();
+      }
+      md-icon{
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+    &>:first-child{
+      padding-left: 16px;
+    }
+  }
+  .fb-list-grid-container{
+    .fb-list-item {
+      outline: 0;
+      height: 100px;
+      width: 100px;
+      min-width: 100px;
+      margin: 8px;
+      position: relative;
+      cursor: pointer;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      user-select: none;
+      text-align: center;
+      &:not(.fb-list-item-select),&.fb-list-item-select-multi {
+        .fb-list-item-title-container {
+          padding: 8px;
+          .line-hidden();
+        }
+      }
+      md-icon{
+        font-size: 64px;
+        margin: 0 auto;
+      }
+      &.fb-list-item-select:not(.fb-list-item-select-multi){
+        z-index: 1;
+        .fb-list-item-title-container{
+          padding: 8px;
+          line-height: 1.4em;
+          position: absolute;
+          top: 62px;
+          width: 100%;
+          word-break: break-all;
+          background: @color-primary;
+        }
+      }
+    }
+  }
+}
+
+.as-sortable-dragging{
+  &>div{
+    padding-left: 8px;
+    height: 100%!important;
+    line-height: 40px;
+    max-width: 100%!important;
+    //display: block;
+    background: @color-primary-100;
+    &.layout-align-end-center{
+      display: flex;
+    }
+    &>.rg-right{
+      display: none;
+    }
+  }
+}

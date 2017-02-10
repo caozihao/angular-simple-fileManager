@@ -1,0 +1,44 @@
+{
+  "name": "angular-schema-form-nwp-file-upload",
+  "homepage": "https://github.com/saburab/angular-schema-form-nwp-file-upload",
+  "authors": [
+    "Sufian Abu-Rab <s.aburab@gmail.com>"
+  ],
+  "dependencies": {
+    "angular": ">= 1.3",
+    "angular-schema-form": ">= 0.8.3",
+    "ng-file-upload": "^7.2.1",
+    "angular-messages": ">= 1.3"
+  },
+  "devDependencies": {
+    "bootstrap": "~3.3.5"
+  },
+  "description": "Upload file type for Angular Schema Form",
+  "keywords": [
+    "angular",
+    "angularjs",
+    "schema",
+    "form",
+    "file",
+    "upload"
+  ],
+  "main": "dist/schema-form-file.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "930f745e6e",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "930f745e6e0b69f0f5f66ff5c1a1205e2c47050f"
+  },
+  "_source": "https://github.com/saburab/angular-schema-form-nwp-file-upload.git",
+  "_target": "*",
+  "_originalSource": "angular-schema-form-nwp-file-upload",
+  "_direct": true
+}
