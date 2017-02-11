@@ -1,7 +1,7 @@
 # angular-simple-fileManager
 # 安装运行
-1，在项目根目录下面运行 "npm install"
-2，项目定位到"angularFileBrower"文件下，运行"bower install"，
+1，在项目根目录下面运行 "npm install"<br>
+2，项目定位到"angularFileBrower"文件下，运行"bower install"<br>
 3，项目定位到"angularFileBrower"文件下，在tomcat或其他本地服务器上打开index.html，如看到效果，则启动成功。<br>
 4，打开右上角的按钮，等待约2秒，会自动生成假数据，形成左侧树。<br>
 # 介绍
